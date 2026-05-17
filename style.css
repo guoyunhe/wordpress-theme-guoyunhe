@@ -14,30 +14,70 @@ Domain Path: /languages
 */
 
 /* ===== BASE ===== */
+:root {
+    --color-bg-body: #000;
+    --color-text-primary: #ddd;
+    --color-link: #b7ffb7;
+    --color-link-hover: #e2ffe2;
+    --color-surface-sidebar: rgba(0, 0, 0, 0.4);
+    --color-surface-panel: rgba(0, 0, 0, 0.3);
+    --color-surface-input: rgba(0, 0, 0, 0.5);
+    --color-surface-card: rgba(0, 0, 0, 0.18);
+    --color-surface-mobile-sidebar: rgba(0, 0, 0, 0.88);
+    --color-backdrop: rgba(0, 0, 0, 0.35);
+    --color-border-soft: rgba(120, 255, 120, 0.2);
+    --color-border-subtle: rgba(120, 255, 120, 0.1);
+    --color-border-input: rgba(120, 255, 120, 0.3);
+    --color-border-strong: rgba(120, 255, 120, 0.4);
+    --color-border-card: rgba(120, 255, 120, 0.14);
+    --color-placeholder: rgba(214, 255, 214, 0.5);
+    --color-avatar-bg: rgba(255, 255, 255, 0.14);
+    --color-text-glow: rgba(74, 255, 74, 0.2);
+    --font-size-root: clamp(14px, 1.5vw, 16px);
+    --font-size-site-title-desktop: clamp(1.3rem, 3vw, 1.8rem);
+    --font-size-site-description: clamp(0.85rem, 1.5vw, 0.95rem);
+    --font-size-copyright: 0.8rem;
+    --font-size-control: 1.2rem;
+    --font-size-site-title-mobile: clamp(1rem, 4vw, 1.3rem);
+    --font-size-post-title: clamp(1.25rem, 4vw, 1.75rem);
+    --font-size-post-content: clamp(0.95rem, 1.2vw, 1.05rem);
+    --font-size-post-title-single: clamp(1.5rem, 4vw, 2.25rem);
+    --font-size-post-meta: 0.85rem;
+    --font-size-comments-title: clamp(1rem, 1.8vw, 1.25rem);
+    --font-size-comment-meta: 0.8rem;
+    --font-size-root-small-tablet: 15px;
+    --font-size-root-mobile: 14px;
+    --font-size-site-title-mobile-small: 1.1rem;
+    --font-size-site-title-mobile-xs: 1rem;
+    --font-size-post-title-small: 1.2rem;
+    --font-size-post-title-xs: 1.05rem;
+    --font-size-widget-title-mobile: 0.95rem;
+}
+
 * {
     box-sizing: border-box;
 }
 
 html {
-    font-size: clamp(14px, 1.5vw, 16px);
+    font-size: var(--font-size-root);
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    background: #0a0d0a;
-    color: #d6ffd6;
+    background: var(--color-bg-body);
+    color: var(--color-text-primary);
     overflow-x: hidden;
 }
 
 a {
-    color: #b7ffb7;
+    color: var(--color-link);
 }
 
 a:hover,
 a:focus {
-    color: #e2ffe2;
+    color: var(--color-link-hover);
 }
 
 #page {
@@ -51,8 +91,8 @@ a:focus {
     display: flex;
     flex-direction: column;
     width: 280px;
-    background: rgba(0, 0, 0, 0.4);
-    border-right: 1px solid rgba(120, 255, 120, 0.2);
+    background: var(--color-surface-sidebar);
+    border-right: 1px solid var(--color-border-soft);
     padding: clamp(1.5rem, 3vw, 2rem);
     position: sticky;
     top: 0;
@@ -80,7 +120,7 @@ a:focus {
 
 .site-title-desktop {
     margin: 0 0 0.5rem;
-    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    font-size: var(--font-size-site-title-desktop);
 }
 
 .site-title-desktop a {
@@ -90,14 +130,14 @@ a:focus {
 
 .site-description-desktop {
     margin: 0;
-    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    font-size: var(--font-size-site-description);
     opacity: 0.75;
 }
 
 /* ===== SIDEBAR NAVIGATION ===== */
 .sidebar-navigation {
     margin-top: 1.5rem;
-    border-top: 1px solid rgba(120, 255, 120, 0.2);
+    border-top: 1px solid var(--color-border-soft);
     padding-top: 1rem;
 }
 
@@ -108,29 +148,29 @@ a:focus {
 }
 
 .sidebar-navigation li {
-    border-bottom: 1px solid rgba(120, 255, 120, 0.1);
+    border-bottom: 1px solid var(--color-border-subtle);
 }
 
 .sidebar-navigation a {
     display: block;
     padding: 0.75rem 0;
     text-decoration: none;
-    color: #d6ffd6;
+    color: var(--color-text-primary);
 }
 
 .sidebar-navigation a:hover {
-    color: #e2ffe2;
+    color: var(--color-link-hover);
 }
 
 .sidebar-footer {
     margin-top: auto;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(120, 255, 120, 0.2);
+    border-top: 1px solid var(--color-border-soft);
 }
 
 .copyright {
     margin: 0;
-    font-size: 0.8rem;
+    font-size: var(--font-size-copyright);
     opacity: 0.6;
 }
 
@@ -143,10 +183,10 @@ a:focus {
 .search-toggle {
     background: none;
     border: none;
-    color: #d6ffd6;
+    color: var(--color-text-primary);
     cursor: pointer;
     padding: 0.5rem;
-    font-size: 1.2rem;
+    font-size: var(--font-size-control);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -206,7 +246,7 @@ a:focus {
     flex: 1;
     margin: 0;
     text-align: center;
-    font-size: clamp(1rem, 4vw, 1.3rem);
+    font-size: var(--font-size-site-title-mobile);
 }
 
 .site-title-mobile a {
@@ -217,9 +257,9 @@ a:focus {
 /* Mobile Search Panel */
 .search-panel {
     display: none;
-    background: rgba(0, 0, 0, 0.3);
+    background: var(--color-surface-panel);
     padding: 1rem;
-    border-bottom: 1px solid rgba(120, 255, 120, 0.2);
+    border-bottom: 1px solid var(--color-border-soft);
 }
 
 .search-panel.active {
@@ -234,21 +274,21 @@ a:focus {
 .search-panel input[type="search"] {
     flex: 1;
     padding: 0.5rem;
-    background: rgba(0, 0, 0, 0.5);
-    border: 1px solid rgba(120, 255, 120, 0.3);
-    color: #d6ffd6;
+    background: var(--color-surface-input);
+    border: 1px solid var(--color-border-input);
+    color: var(--color-text-primary);
     border-radius: 4px;
 }
 
 .search-panel input[type="search"]::placeholder {
-    color: rgba(214, 255, 214, 0.5);
+    color: var(--color-placeholder);
 }
 
 .search-panel button {
     padding: 0.5rem 1rem;
-    background: rgba(120, 255, 120, 0.2);
-    border: 1px solid rgba(120, 255, 120, 0.4);
-    color: #d6ffd6;
+    background: var(--color-border-soft);
+    border: 1px solid var(--color-border-strong);
+    color: var(--color-text-primary);
     cursor: pointer;
     border-radius: 4px;
 }
@@ -266,7 +306,7 @@ main {
     padding: clamp(1rem, 3vw, 2rem) clamp(0.75rem, 2vw, 1.5rem);
     position: relative;
     z-index: 1;
-    text-shadow: 0 0 2px rgba(74, 255, 74, 0.2);
+    text-shadow: 0 0 2px var(--color-text-glow);
     animation: crt-text-jitter 160ms infinite;
 }
 
@@ -290,7 +330,7 @@ main {
 
 .post h2 {
     margin: 0 0 0.5rem;
-    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    font-size: var(--font-size-post-title);
 }
 
 .post header {
@@ -298,17 +338,17 @@ main {
 }
 
 .post p {
-    font-size: clamp(0.95rem, 1.2vw, 1.05rem);
+    font-size: var(--font-size-post-content);
 }
 
 .post h1 {
     margin: 0 0 0.5rem;
-    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-size: var(--font-size-post-title-single);
 }
 
 .post-meta {
     margin: 0;
-    font-size: 0.85rem;
+    font-size: var(--font-size-post-meta);
     opacity: 0.7;
 }
 
@@ -319,7 +359,7 @@ main {
 
 .comments-title {
     margin: 0 0 1rem;
-    font-size: clamp(1rem, 1.8vw, 1.25rem);
+    font-size: var(--font-size-comments-title);
 }
 
 .comment-list {
@@ -341,7 +381,7 @@ main {
 
 .comment-list .avatar {
     border-radius: 4px;
-    background-color: rgba(255,255,255,0.14);
+    background-color: var(--color-avatar-bg);
 }
 
 .comment-meta {
@@ -356,20 +396,20 @@ main {
 }
 
 .comment-metadata {
-    font-size: 0.8rem;
+    font-size: var(--font-size-comment-meta);
 }
 
 .comment-body {
     padding: 0.75rem;
-    border: 1px solid rgba(120, 255, 120, 0.14);
-    background: rgba(0, 0, 0, 0.18);
+    border: 1px solid var(--color-border-card);
+    background: var(--color-surface-card);
     border-radius: 8px;
 }
 
 .comment-meta a,
 .comment-reply-link,
 .comment-form a {
-    color: #b7ffb7;
+    color: var(--color-link);
 }
 
 .comment-respond {
@@ -387,9 +427,9 @@ main {
 .comment-form textarea {
     width: 100%;
     padding: 0.6rem;
-    color: #d6ffd6;
-    background: rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(120, 255, 120, 0.3);
+    color: var(--color-text-primary);
+    background: var(--color-surface-input);
+    border: 1px solid var(--color-border-input);
     border-radius: 4px;
 }
 
@@ -399,9 +439,9 @@ main {
 
 .comment-form .form-submit input {
     padding: 0.65rem 1rem;
-    color: #d6ffd6;
-    background: rgba(120, 255, 120, 0.2);
-    border: 1px solid rgba(120, 255, 120, 0.4);
+    color: var(--color-text-primary);
+    background: var(--color-border-soft);
+    border: 1px solid var(--color-border-strong);
     border-radius: 4px;
     cursor: pointer;
 }
@@ -511,8 +551,8 @@ body::after {
         width: min(86vw, 320px);
         height: calc(100vh - (4.5rem + var(--wp-admin-bar-height, 0px)));
         padding: 1rem;
-        background: rgba(0, 0, 0, 0.88);
-        border-right: 1px solid rgba(120, 255, 120, 0.22);
+        background: var(--color-surface-mobile-sidebar);
+        border-right: 1px solid var(--color-border-soft);
         box-shadow: 22px 0 42px rgba(0, 0, 0, 0.55);
         transform: translateX(-102%);
         opacity: 0;
@@ -528,8 +568,8 @@ body::after {
         align-items: center;
         gap: 1rem;
         padding: clamp(0.75rem, 1.5vw, 1rem);
-        border-bottom: 1px solid rgba(120, 255, 120, 0.2);
-        background: rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid var(--color-border-soft);
+        background: var(--color-surface-panel);
         position: sticky;
         top: 0;
         z-index: 200;
@@ -552,7 +592,7 @@ body::after {
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0.35);
+        background: var(--color-backdrop);
         opacity: 0;
         visibility: hidden;
         pointer-events: none;
@@ -585,7 +625,7 @@ body::after {
     }
 
     .sidebar-navigation li {
-        border-bottom: 1px solid rgba(120, 255, 120, 0.12);
+        border-bottom: 1px solid var(--color-border-subtle);
     }
 
     .sidebar-navigation a {
@@ -604,7 +644,7 @@ body::after {
 /* ===== RESPONSIVE: SMALL TABLET ===== */
 @media (max-width: 768px) {
     html {
-        font-size: 15px;
+        font-size: var(--font-size-root-small-tablet);
     }
 
     main {
@@ -616,11 +656,11 @@ body::after {
     }
 
     .site-title-mobile {
-        font-size: 1.1rem;
+        font-size: var(--font-size-site-title-mobile-small);
     }
 
     .post h2 {
-        font-size: 1.2rem;
+        font-size: var(--font-size-post-title-small);
     }
 
     .widget {
@@ -631,7 +671,7 @@ body::after {
 /* ===== RESPONSIVE: MOBILE ===== */
 @media (max-width: 480px) {
     html {
-        font-size: 14px;
+        font-size: var(--font-size-root-mobile);
     }
 
     main {
@@ -650,11 +690,11 @@ body::after {
     }
 
     .site-title-mobile {
-        font-size: 1rem;
+        font-size: var(--font-size-site-title-mobile-xs);
     }
 
     .post h2 {
-        font-size: 1.05rem;
+        font-size: var(--font-size-post-title-xs);
     }
 
     .widget {
@@ -663,7 +703,7 @@ body::after {
     }
 
     .widget-title {
-        font-size: 0.95rem;
+        font-size: var(--font-size-widget-title-mobile);
     }
 
     .widget ul {
