@@ -60,3 +60,5 @@
             ]);
             ?>
         </nav>
+
+        <div class="mobile-menu-backdrop" aria-hidden="true"></div>

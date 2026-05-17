@@ -4,13 +4,28 @@
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
             const mobileMenu = document.getElementById('mobile-menu');
+            const mobileMenuBackdrop = document.querySelector('.mobile-menu-backdrop');
             const searchToggle = document.querySelector('.search-toggle');
             const searchPanel = document.getElementById('mobile-search');
 
+            function setMobileMenuState(isOpen) {
+                mobileMenu.classList.toggle('active', isOpen);
+                if (mobileMenuBackdrop) {
+                    mobileMenuBackdrop.classList.toggle('active', isOpen);
+                }
+                menuToggle.setAttribute('aria-expanded', isOpen);
+                document.body.classList.toggle('menu-open', isOpen);
+            }
+
             if (menuToggle && mobileMenu) {
                 menuToggle.addEventListener('click', function() {
-                    mobileMenu.classList.toggle('active');
-                    this.setAttribute('aria-expanded', mobileMenu.classList.contains('active'));
+                    setMobileMenuState(!mobileMenu.classList.contains('active'));
+                });
+            }
+
+            if (mobileMenuBackdrop && mobileMenu) {
+                mobileMenuBackdrop.addEventListener('click', function() {
+                    setMobileMenuState(false);
                 });
             }
 
