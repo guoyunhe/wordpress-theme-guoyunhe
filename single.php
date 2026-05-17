@@ -7,18 +7,22 @@
         <section class="content-column">
             <?php if (have_posts()) : ?>
                 <?php while (have_posts()) : the_post(); ?>
-                    <article class="post">
+                    <article <?php post_class('post'); ?>>
                         <header>
-                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                            <h1><?php the_title(); ?></h1>
+                            <p class="post-meta">
+                                <?php echo esc_html(get_the_date()); ?>
+                            </p>
                         </header>
                         <?php the_content(); ?>
                     </article>
+
+                    <?php if (comments_open() || get_comments_number()) : ?>
+                        <?php comments_template(); ?>
+                    <?php endif; ?>
                 <?php endwhile; ?>
-            <?php else : ?>
-                <p><?php esc_html_e('No posts found.', 'guoyunhe'); ?></p>
             <?php endif; ?>
         </section>
-
     </div>
 </main>
 

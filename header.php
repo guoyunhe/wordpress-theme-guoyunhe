@@ -7,7 +7,7 @@
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class('crt-svg-filter'); ?>>
     <?php wp_body_open(); ?>
     <div id="page">
         <!-- Mobile Header -->
