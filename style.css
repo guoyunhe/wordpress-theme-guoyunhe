@@ -259,10 +259,15 @@ a:focus {
 /* ===== SIDEBAR SEARCH ===== */
 .sidebar-search {
     margin-top: 1rem;
-    padding: 0 1rem 1rem;
+    padding-inline: var(--sidebar-padding-inline);
 }
 
 .sidebar-search form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.sidebar-search label {
     display: flex;
     gap: 0.5rem;
 }
@@ -274,19 +279,15 @@ a:focus {
     border: 1px solid var(--color-border-input);
     color: var(--color-text-primary);
     border-radius: 4px;
+    width: 100%;
 }
 
 .sidebar-search input[type="search"]::placeholder {
     color: var(--color-placeholder);
 }
 
-.sidebar-search button {
-    padding: 0.5rem 1rem;
-    background: var(--color-border-soft);
-    border: 1px solid var(--color-border-strong);
-    color: var(--color-text-primary);
-    cursor: pointer;
-    border-radius: 4px;
+.sidebar-search input[type="button"] {
+    display: none;
 }
 
 .site-sidebar-backdrop {
