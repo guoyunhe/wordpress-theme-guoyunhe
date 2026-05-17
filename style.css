@@ -52,6 +52,9 @@ Domain Path: /languages
     --font-size-post-title-small: 1.2rem;
     --font-size-post-title-xs: 1.05rem;
     --font-size-widget-title-mobile: 0.95rem;
+
+    --mobile-navbar-height: 3.5rem;
+    --mobile-navbar-icon-size: 2.5rem;
     --sidebar-padding-inline: 1rem;
 }
 
@@ -82,8 +85,6 @@ a:focus {
 }
 
 #page {
-    display: flex;
-    flex-direction: row;
     min-height: calc(100vh - var(--wp-admin-bar-height, 0px));
 }
 
@@ -180,12 +181,17 @@ a:focus {
 .copyright {
     margin: 0;
     font-size: var(--font-size-copyright);
-    opacity: 0.6;
+    padding-inline: var(--sidebar-padding-inline);
 }
 
 /* ===== MOBILE HEADER (hidden on desktop) ===== */
 .site-header-mobile {
     display: none;
+    height: var(--mobile-navbar-height);
+    align-items: center;
+    background: var(--color-surface-panel);
+    border-bottom: 1px solid var(--color-border-soft);
+    backdrop-filter: blur(1rem);
 }
 
 .menu-toggle,
@@ -194,8 +200,9 @@ a:focus {
     border: none;
     color: var(--color-text-primary);
     cursor: pointer;
-    padding: 0.5rem;
-    font-size: var(--font-size-control);
+    padding: calc((var(--mobile-navbar-height) - var(--mobile-navbar-icon-size)) / 2);
+    width: var(--mobile-navbar-icon-size);
+    height: var(--mobile-navbar-icon-size);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -556,7 +563,6 @@ body::after {
         left: 0;
         width: min(86vw, 320px);
         height: calc(100vh - (4.5rem + var(--wp-admin-bar-height, 0px)));
-        padding: 1rem;
         background: var(--color-surface-mobile-sidebar);
         border-right: 1px solid var(--color-border-soft);
         box-shadow: 22px 0 42px rgba(0, 0, 0, 0.55);
@@ -571,24 +577,9 @@ body::after {
 
     .site-header-mobile {
         display: flex;
-        align-items: center;
-        gap: 1rem;
-        padding: clamp(0.75rem, 1.5vw, 1rem);
-        border-bottom: 1px solid var(--color-border-soft);
-        background: var(--color-surface-panel);
         position: sticky;
         top: 0;
         z-index: 200;
-    }
-
-    .layout-grid {
-        grid-template-columns: 1fr;
-        gap: clamp(1rem, 2vw, 1.5rem);
-    }
-
-    .sidebar-column {
-        position: static;
-        top: auto;
     }
 
     .site-sidebar-backdrop {
@@ -657,10 +648,6 @@ body::after {
         padding: clamp(0.75rem, 2vw, 1.5rem) clamp(0.5rem, 1.5vw, 1rem);
     }
 
-    .site-header-mobile {
-        padding: 0.75rem 0.5rem;
-    }
-
     .site-title-mobile {
         font-size: var(--font-size-site-title-mobile-small);
     }
@@ -684,11 +671,6 @@ body::after {
         padding: 0.5rem;
     }
 
-    .site-header-mobile {
-        padding: 0.5rem;
-        gap: 0.5rem;
-    }
-
     .menu-toggle,
     .search-toggle {
         width: 40px;
@@ -697,6 +679,11 @@ body::after {
 
     .site-title-mobile {
         font-size: var(--font-size-site-title-mobile-xs);
+    }
+
+    .site-sidebar {
+        top: var(--mobile-navbar-height);
+        height: calc(100vh - var(--mobile-navbar-height));
     }
 
     .post h2 {
