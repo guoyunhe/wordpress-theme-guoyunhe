@@ -2,6 +2,7 @@ services:
   db:
     image: mariadb:11
     environment:
+      # Local development defaults only. Do not reuse for production.
       MARIADB_DATABASE: wordpress
       MARIADB_USER: wordpress
       MARIADB_PASSWORD: wordpress
