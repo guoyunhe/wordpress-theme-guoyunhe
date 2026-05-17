@@ -406,10 +406,6 @@ a:focus {
   color: #e2ffe2;
 }
 
-.crt-svg-filter {
-  filter: url(#crt-barrel-distortion);
-}
-
 .crt-filter-defs {
   position: absolute;
   width: 0;
