@@ -3,29 +3,33 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuToggle = document.querySelector('.menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-            const mobileMenuBackdrop = document.querySelector('.mobile-menu-backdrop');
+            const siteSidebar = document.querySelector('.site-sidebar');
+            const siteSidebarBackdrop = document.querySelector('.site-sidebar-backdrop');
             const searchToggle = document.querySelector('.search-toggle');
             const searchPanel = document.getElementById('mobile-search');
 
-            function setMobileMenuState(isOpen) {
-                mobileMenu.classList.toggle('active', isOpen);
-                if (mobileMenuBackdrop) {
-                    mobileMenuBackdrop.classList.toggle('active', isOpen);
+            function setSidebarState(isOpen) {
+                if (siteSidebar) {
+                    siteSidebar.classList.toggle('active', isOpen);
                 }
-                menuToggle.setAttribute('aria-expanded', isOpen);
+                if (siteSidebarBackdrop) {
+                    siteSidebarBackdrop.classList.toggle('active', isOpen);
+                }
+                if (menuToggle) {
+                    menuToggle.setAttribute('aria-expanded', isOpen);
+                }
                 document.body.classList.toggle('menu-open', isOpen);
             }
 
-            if (menuToggle && mobileMenu) {
+            if (menuToggle && siteSidebar) {
                 menuToggle.addEventListener('click', function() {
-                    setMobileMenuState(!mobileMenu.classList.contains('active'));
+                    setSidebarState(!siteSidebar.classList.contains('active'));
                 });
             }
 
-            if (mobileMenuBackdrop && mobileMenu) {
-                mobileMenuBackdrop.addEventListener('click', function() {
-                    setMobileMenuState(false);
+            if (siteSidebarBackdrop && siteSidebar) {
+                siteSidebarBackdrop.addEventListener('click', function() {
+                    setSidebarState(false);
                 });
             }
 
