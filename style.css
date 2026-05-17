@@ -328,12 +328,14 @@ main {
     list-style: none;
 }
 
-.comment-list .comment {
+.comment-list .comment-body {
     margin-bottom: 1rem;
+    max-width: 40rem;
 }
 
 .comment-list .children {
     margin-top: 1rem;
+    padding-left: 2rem;
     list-style: none;
 }
 
