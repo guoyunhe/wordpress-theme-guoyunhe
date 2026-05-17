@@ -1,17 +1,24 @@
 <?php get_header(); ?>
+
 <main id="main-content" class="crt-svg-filter">
-    <?php if (have_posts()) : ?>
-        <?php while (have_posts()) : the_post(); ?>
-            <article class="post">
-                <header>
-                    <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                </header>
-                <?php the_content(); ?>
-            </article>
-        <?php endwhile; ?>
-    <?php else : ?>
-        <p><?php esc_html_e('No posts found.', 'guoyunhe'); ?></p>
-    <?php endif; ?>
+    <div class="layout-grid">
+        <section class="content-column">
+            <?php if (have_posts()) : ?>
+                <?php while (have_posts()) : the_post(); ?>
+                    <article class="post">
+                        <header>
+                            <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                        </header>
+                        <?php the_content(); ?>
+                    </article>
+                <?php endwhile; ?>
+            <?php else : ?>
+                <p><?php esc_html_e('No posts found.', 'guoyunhe'); ?></p>
+            <?php endif; ?>
+        </section>
+
+        <?php get_sidebar(); ?>
+    </div>
 </main>
 
 <svg class="crt-filter-defs" aria-hidden="true" focusable="false" width="0" height="0" xmlns="http://www.w3.org/2000/svg">
