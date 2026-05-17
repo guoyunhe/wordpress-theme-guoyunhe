@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const siteSidebar = document.querySelector('.site-sidebar');
     const siteSidebarBackdrop = document.querySelector('.site-sidebar-backdrop');
-    const searchToggle = document.querySelector('.search-toggle');
-    const searchPanel = document.getElementById('mobile-search');
 
     function setSidebarState(isOpen) {
         if (siteSidebar) {
@@ -27,16 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (siteSidebarBackdrop && siteSidebar) {
         siteSidebarBackdrop.addEventListener('click', function() {
             setSidebarState(false);
-        });
-    }
-
-    if (searchToggle && searchPanel) {
-        searchToggle.addEventListener('click', function() {
-            searchPanel.classList.toggle('active');
-            const searchInput = searchPanel.querySelector('input[type="search"]');
-            if (searchInput && searchPanel.classList.contains('active')) {
-                searchInput.focus();
-            }
         });
     }
 });

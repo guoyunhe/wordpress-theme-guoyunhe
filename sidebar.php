@@ -15,6 +15,9 @@
             </h1>
             <p class="site-description-desktop"><?php bloginfo('description'); ?></p>
         </div>
+        <div class="sidebar-search">
+            <?php get_search_form(); ?>
+        </div>
         <nav class="sidebar-navigation" aria-label="<?php esc_attr_e('Primary Navigation', 'guoyunhe'); ?>">
             <?php
             wp_nav_menu([

@@ -22,14 +22,6 @@
                     <?php bloginfo('name'); ?>
                 </a>
             </h1>
-            <button class="search-toggle" aria-label="<?php esc_attr_e('Toggle Search', 'guoyunhe'); ?>">
-                &#128269;
-            </button>
         </header>
-
-        <!-- Mobile Search Panel -->
-        <div class="search-panel" id="mobile-search">
-            <?php get_search_form(); ?>
-        </div>
 
         <div class="site-sidebar-backdrop" aria-hidden="true"></div>
