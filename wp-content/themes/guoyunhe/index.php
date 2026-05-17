@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<main>
+<main id="main-content">
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <article>

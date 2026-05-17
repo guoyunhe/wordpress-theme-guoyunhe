@@ -4,6 +4,10 @@ A custom WordPress theme with local Docker-based testing.
 
 ## Local testing
 
+0. Optional: create local config file:
+   ```bash
+   cp .env.example .env
+   ```
 1. Start services:
    ```bash
    docker compose up -d
