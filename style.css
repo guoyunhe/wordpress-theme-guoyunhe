@@ -328,7 +328,7 @@ main {
     list-style: none;
 }
 
-.comment-list .comment-body {
+.comment-body {
     margin-bottom: 1rem;
     max-width: 40rem;
 }
@@ -370,6 +370,10 @@ main {
 .comment-reply-link,
 .comment-form a {
     color: #b7ffb7;
+}
+
+.comment-respond {
+    max-width: 40rem;
 }
 
 .comment-form label {
