@@ -1,6 +1,13 @@
 <aside class="site-sidebar" role="complementary" aria-label="<?php esc_attr_e('Site Info', 'guoyunhe'); ?>">
     <div class="sidebar-content">
         <div class="site-branding-desktop">
+            <div class="site-logo">
+                <?php
+                if (has_custom_logo()) {
+                    the_custom_logo();
+                }
+                ?>
+            </div>
             <h1 class="site-title-desktop">
                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
                     <?php bloginfo('name'); ?>

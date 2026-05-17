@@ -58,6 +58,16 @@ body {
   margin-bottom: 2rem;
 }
 
+.site-logo {
+  margin-bottom: 1rem;
+}
+
+.site-logo .custom-logo {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 .site-title-desktop {
   margin: 0 0 0.5rem;
   font-size: clamp(1.3rem, 3vw, 1.8rem);
