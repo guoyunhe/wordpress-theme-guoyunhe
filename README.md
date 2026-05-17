@@ -2,6 +2,8 @@
 
 A custom WordPress theme with local Docker-based testing.
 
+Theme files are stored at the project root (`style.css`, `functions.php`, `index.php`).
+
 ## Local testing
 
 0. Optional: create local config file:
