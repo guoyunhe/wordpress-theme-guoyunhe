@@ -286,7 +286,7 @@ a:focus {
     color: var(--color-placeholder);
 }
 
-.sidebar-search input[type="button"] {
+.sidebar-search input[type="submit"] {
     display: none;
 }
 
