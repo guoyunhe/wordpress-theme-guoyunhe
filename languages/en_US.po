@@ -10,4 +10,4 @@ msgstr ""
 
 #: index.php:13
 msgid "No posts found."
-msgstr "No posts found."
+msgstr ""
