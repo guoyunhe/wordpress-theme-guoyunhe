@@ -19,6 +19,7 @@ add_action('after_setup_theme', function () {
 
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('guoyunhe-style', get_stylesheet_uri(), [], GUOYUNHE_THEME_VERSION);
+    wp_enqueue_script('guoyunhe-theme', get_template_directory_uri() . '/js/theme.js', [], GUOYUNHE_THEME_VERSION, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
