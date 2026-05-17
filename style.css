@@ -52,6 +52,7 @@ Domain Path: /languages
     --font-size-post-title-small: 1.2rem;
     --font-size-post-title-xs: 1.05rem;
     --font-size-widget-title-mobile: 0.95rem;
+    --sidebar-padding-inline: 1rem;
 }
 
 * {
@@ -86,17 +87,17 @@ a:focus {
     min-height: calc(100vh - var(--wp-admin-bar-height, 0px));
 }
 
-/* ===== DESKTOP SIDEBAR (hidden on mobile) ===== */
+/* ===== SIDEBAR ===== */
 .site-sidebar {
     display: flex;
     flex-direction: column;
     width: 280px;
     background: var(--color-surface-sidebar);
     border-right: 1px solid var(--color-border-soft);
-    padding: clamp(1.5rem, 3vw, 2rem);
     position: sticky;
-    top: 0;
+    top: var(--wp-admin-bar-height, 0px);
     height: calc(100vh - var(--wp-admin-bar-height, 0px));
+    overflow-x: hidden;
     overflow-y: auto;
 }
 
@@ -106,6 +107,7 @@ a:focus {
 
 .site-branding-desktop {
     margin-bottom: 2rem;
+    text-align: center;
 }
 
 .site-logo {
@@ -126,6 +128,8 @@ a:focus {
 .site-title-desktop a {
     text-decoration: none;
     color: inherit;
+    display: block;
+    padding-inline: var(--sidebar-padding-inline);
 }
 
 .site-description-desktop {
@@ -153,13 +157,18 @@ a:focus {
 
 .sidebar-navigation a {
     display: block;
-    padding: 0.75rem 0;
+    padding: 0.75rem var(--sidebar-padding-inline);
     text-decoration: none;
     color: var(--color-text-primary);
 }
 
 .sidebar-navigation a:hover {
     color: var(--color-link-hover);
+}
+
+.sidebar-navigation .current-menu-item a {
+    color: var(--color-bg-body);
+    background: var(--color-text-primary)
 }
 
 .sidebar-footer {
@@ -540,9 +549,6 @@ body::after {
 
 /* ===== RESPONSIVE: TABLET ===== */
 @media (max-width: 960px) {
-    #page {
-        flex-direction: column;
-    }
 
     .site-sidebar {
         position: fixed;
