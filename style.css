@@ -31,6 +31,15 @@ body {
     overflow-x: hidden;
 }
 
+a {
+    color: #b7ffb7;
+}
+
+a:hover,
+a:focus {
+    color: #e2ffe2;
+}
+
 #page {
     display: flex;
     flex-direction: row;
@@ -315,7 +324,7 @@ main {
 
 .comment-list {
     margin: 0 0 1.5rem;
-    padding-left: 1.25rem;
+    padding-left: 0;
     list-style: none;
 }
 
@@ -325,13 +334,34 @@ main {
 
 .comment-list .children {
     margin-top: 1rem;
+    list-style: none;
+}
+
+.comment-list .avatar {
+    border-radius: 4px;
+    background-color: rgba(255,255,255,0.14);
+}
+
+.comment-meta {
+    display: flex;
+}
+
+.comment-author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 1 1 auto;
+}
+
+.comment-metadata {
+    font-size: 0.8rem;
 }
 
 .comment-body {
     padding: 0.75rem;
     border: 1px solid rgba(120, 255, 120, 0.14);
     background: rgba(0, 0, 0, 0.18);
-    border-radius: 4px;
+    border-radius: 8px;
 }
 
 .comment-meta a,
@@ -370,43 +400,7 @@ main {
     cursor: pointer;
 }
 
-/* ===== WIDGETS ===== */
-.sidebar-column {
-    position: sticky;
-    top: 1rem;
-}
 
-.widget {
-    margin-bottom: clamp(0.75rem, 2vw, 1.5rem);
-    padding: clamp(0.75rem, 2vw, 1.25rem);
-    border: 1px solid rgba(120, 255, 120, 0.35);
-    background: rgba(0, 0, 0, 0.25);
-    border-radius: 6px;
-}
-
-.widget-title {
-    margin: 0 0 clamp(0.5rem, 1vw, 0.75rem);
-    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-    font-weight: bold;
-}
-
-.widget ul {
-    margin: 0;
-    padding-left: 1.2rem;
-}
-
-.widget li {
-    margin-bottom: 0.4rem;
-}
-
-a {
-    color: #b7ffb7;
-}
-
-a:hover,
-a:focus {
-    color: #e2ffe2;
-}
 
 /* ===== CRT FILTER ===== */
 .crt-filter-defs {
