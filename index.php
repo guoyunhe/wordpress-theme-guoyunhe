@@ -1,5 +1,7 @@
 <?php get_header(); ?>
 
+<?php get_sidebar(); ?>
+
 <main id="main-content" class="crt-svg-filter">
     <div class="layout-grid">
         <section class="content-column">
