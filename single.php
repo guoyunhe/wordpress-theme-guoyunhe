@@ -6,6 +6,11 @@
     <?php if (have_posts()) : ?>
         <?php while (have_posts()) : the_post(); ?>
             <article <?php post_class('post'); ?>>
+                <?php if (has_post_thumbnail()) : ?>
+                    <div class="post-thumbnail">
+                        <?php the_post_thumbnail('large', ['loading' => 'eager']); ?>
+                    </div>
+                <?php endif; ?>
                 <header>
                     <h1><?php the_title(); ?></h1>
                     <p class="post-meta">
