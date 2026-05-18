@@ -19,6 +19,9 @@
             </button>
             <h1 class="site-title-mobile">
                 <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                    <?php if (has_site_icon()) : ?>
+                        <img class="site-icon-mobile" src="<?php echo esc_url(get_site_icon_url(64)); ?>" alt="" aria-hidden="true">
+                    <?php endif; ?>
                     <?php bloginfo('name'); ?>
                 </a>
             </h1>

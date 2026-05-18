@@ -255,8 +255,19 @@ a:focus {
 }
 
 .site-title-mobile a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     text-decoration: none;
     color: inherit;
+}
+
+.site-icon-mobile {
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 4px;
+    object-fit: cover;
+    border: 1px solid var(--color-border-subtle);
 }
 
 /* ===== SIDEBAR SEARCH ===== */
@@ -763,6 +774,11 @@ body::after {
 
     .site-title-mobile {
         font-size: var(--font-size-site-title-mobile-xs);
+    }
+
+    .site-icon-mobile {
+        width: 1.5rem;
+        height: 1.5rem;
     }
 
     .site-sidebar {
