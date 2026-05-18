@@ -10,4 +10,28 @@ msgstr ""
 
 #: index.php:13
 msgid "No posts found."
-msgstr ""
+msgstr "No posts found."
+
+#: functions.php:16
+msgid "Primary Menu"
+msgstr "Primary Menu"
+
+#: functions.php:36
+msgid "Primary Sidebar"
+msgstr "Primary Sidebar"
+
+#: functions.php:38
+msgid "Widgets in this area will be shown on the main blog page sidebar."
+msgstr "Widgets in this area will be shown on the main blog page sidebar."
+
+#: sidebar.php:1
+msgid "Site Info"
+msgstr "Site Info"
+
+#: sidebar.php:21
+msgid "Primary Navigation"
+msgstr "Primary Navigation"
+
+#: header.php:15
+msgid "Toggle Menu"
+msgstr "Toggle Menu"

@@ -13,7 +13,7 @@ add_action('after_setup_theme', function () {
     load_theme_textdomain('guoyunhe', get_template_directory() . '/languages');
 
     register_nav_menus([
-        'primary-menu' => __('Mobile Menu', 'guoyunhe'),
+        'primary-menu' => __('Primary Menu', 'guoyunhe'),
     ]);
 });
 

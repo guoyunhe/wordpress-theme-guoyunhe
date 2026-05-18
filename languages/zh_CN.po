@@ -11,3 +11,27 @@ msgstr ""
 #: index.php:13
 msgid "No posts found."
 msgstr "没有找到文章。"
+
+#: functions.php:16
+msgid "Primary Menu"
+msgstr "主菜单"
+
+#: functions.php:36
+msgid "Primary Sidebar"
+msgstr "主侧边栏"
+
+#: functions.php:38
+msgid "Widgets in this area will be shown on the main blog page sidebar."
+msgstr "此区域中的小工具将显示在博客主页侧边栏。"
+
+#: sidebar.php:1
+msgid "Site Info"
+msgstr "站点信息"
+
+#: sidebar.php:21
+msgid "Primary Navigation"
+msgstr "主导航"
+
+#: header.php:15
+msgid "Toggle Menu"
+msgstr "切换菜单"
