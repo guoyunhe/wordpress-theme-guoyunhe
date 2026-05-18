@@ -35,3 +35,19 @@ msgstr "主导航"
 #: header.php:15
 msgid "Toggle Menu"
 msgstr "切换菜单"
+
+#: page.php:25
+msgid "Page not found."
+msgstr "页面未找到。"
+
+#: post-meta.php:44
+msgid "0 comments"
+msgstr "0 条评论"
+
+#: post-meta.php:44
+msgid "1 comment"
+msgstr "1 条评论"
+
+#: post-meta.php:44
+msgid "% comments"
+msgstr "% 条评论"

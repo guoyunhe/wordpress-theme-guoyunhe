@@ -35,3 +35,19 @@ msgstr "Primary Navigation"
 #: header.php:15
 msgid "Toggle Menu"
 msgstr "Toggle Menu"
+
+#: page.php:25
+msgid "Page not found."
+msgstr "Page not found."
+
+#: post-meta.php:44
+msgid "0 comments"
+msgstr "0 comments"
+
+#: post-meta.php:44
+msgid "1 comment"
+msgstr "1 comment"
+
+#: post-meta.php:44
+msgid "% comments"
+msgstr "% comments"
