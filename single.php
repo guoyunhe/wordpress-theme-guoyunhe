@@ -13,9 +13,7 @@
                 <?php endif; ?>
                 <header>
                     <h1><?php the_title(); ?></h1>
-                    <p class="post-meta">
-                        <?php echo esc_html(get_the_date()); ?>
-                    </p>
+                    <?php get_template_part('post', 'meta'); ?>
                 </header>
                 <?php the_content(); ?>
             </article>

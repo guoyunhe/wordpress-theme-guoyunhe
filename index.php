@@ -6,7 +6,7 @@
     <?php if (have_posts()) : ?>
         <div class="post-card-list">
             <?php while (have_posts()) : the_post(); ?>
-                <?php get_template_part('parts/content', 'card'); ?>
+                <?php get_template_part('post', 'card'); ?>
             <?php endwhile; ?>
         </div>
 
