@@ -75,6 +75,7 @@ body {
     background: var(--color-bg-body);
     color: var(--color-text-primary);
     overflow-x: hidden;
+    animation: crt-text-jitter 160ms infinite;
 }
 
 a {
@@ -311,23 +312,8 @@ a:focus {
 /* ===== MAIN CONTENT ===== */
 main {
     flex: 1;
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    padding: clamp(1rem, 3vw, 2rem) clamp(0.75rem, 2vw, 1.5rem);
+    padding: 1rem;
     position: relative;
-    z-index: 1;
-    text-shadow: 0 0 2px var(--color-text-glow);
-    animation: crt-text-jitter 160ms infinite;
-}
-
-.layout-grid {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) clamp(240px, 28vw, 320px);
-    gap: clamp(1rem, 2vw, 2rem);
-    align-items: start;
-    width: 100%;
-    max-width: 1120px;
 }
 
 .content-column {
@@ -463,7 +449,7 @@ main {
 }
 
 .post-card .post-meta,
-.post > header .post-meta {
+.post>header .post-meta {
     margin: 0;
 }
 
