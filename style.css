@@ -462,6 +462,10 @@ main {
     font-size: 0.9rem;
 }
 
+.pagination {
+    margin-top: 1rem;
+}
+
 /* Tablet & desktop: horizontal card layout */
 @media (min-width: 600px) {
     .post-card {
