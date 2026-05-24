@@ -26,6 +26,17 @@ add_action('wp_enqueue_scripts', function () {
     }
 });
 
+add_action('wp_enqueue_scripts', function () {
+    if (is_admin()) {
+        return;
+    }
+
+    wp_dequeue_script('jquery');
+    wp_deregister_script('jquery');
+    wp_dequeue_script('jquery-migrate');
+    wp_deregister_script('jquery-migrate');
+}, 100);
+
 add_action('wp_head', function () {
     $admin_bar_height = is_admin_bar_showing() ? '32px' : '0px';
     echo '<style>:root { --wp-admin-bar-height: ' . esc_attr($admin_bar_height) . '; }</style>';
