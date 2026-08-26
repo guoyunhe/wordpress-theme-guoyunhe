@@ -478,6 +478,179 @@ main {
     }
 }
 
+/* ===== TABLE OF CONTENTS ===== */
+#ez-toc-container {
+    background: var(--color-surface-card);
+    border: 1px solid var(--color-border-card);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    display: table;
+    font-size: 0.95rem;
+}
+
+.ez-toc-title-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+}
+
+.ez-toc-title {
+    margin: 0;
+    font-weight: bold;
+    color: var(--color-text-primary);
+}
+
+.ez-toc-title-toggle {
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.ez-toc-title-toggle a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 4px;
+    border: 1px solid var(--color-border-input);
+    background: var(--color-surface-input);
+    text-decoration: none;
+}
+
+.ez-toc-title-toggle a:hover,
+.ez-toc-title-toggle a:focus {
+    border-color: var(--color-border-strong);
+    background: var(--color-border-soft);
+}
+
+.ez-toc-title-toggle svg {
+    fill: #999;
+    color: #999;
+}
+
+.ez-toc-title-toggle a:hover svg,
+.ez-toc-title-toggle a:focus svg {
+    fill: var(--color-link);
+    color: var(--color-link);
+}
+
+#ez-toc-container nav {
+    margin: 0;
+}
+
+.ez-toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.ez-toc-list li {
+    margin: 0;
+    line-height: 1.5;
+}
+
+.ez-toc-list a {
+    display: block;
+    padding: 0.3rem 0;
+    color: var(--color-link);
+    text-decoration: none;
+    border-radius: 3px;
+    transition: color 0.15s ease, background 0.15s ease;
+}
+
+.ez-toc-list a:hover,
+.ez-toc-list a:focus {
+    color: var(--color-link-hover);
+    background: var(--color-border-subtle);
+}
+
+/* Nested level indentation */
+.ez-toc-list .ez-toc-list-level-3 {
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--color-border-subtle);
+    margin-left: 0.25rem;
+}
+
+.ez-toc-list-level-3 .ez-toc-link {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Counter hierarchy */
+.ez-toc-counter .ez-toc-list {
+    counter-reset: ez-toc-level-2;
+}
+
+.ez-toc-counter .ez-toc-heading-level-2 > .ez-toc-link::before {
+    counter-increment: ez-toc-level-2;
+    content: counter(ez-toc-level-2) ". ";
+    color: var(--color-link);
+    font-weight: bold;
+}
+
+.ez-toc-counter .ez-toc-list-level-3 {
+    counter-reset: ez-toc-level-3;
+}
+
+.ez-toc-counter .ez-toc-heading-level-3 > .ez-toc-link::before {
+    counter-increment: ez-toc-level-3;
+    content: counter(ez-toc-level-2) "." counter(ez-toc-level-3) ". ";
+    color: var(--color-link);
+    opacity: 0.85;
+}
+
+/* Override ez-toc-grey to green theme */
+#ez-toc-container.ez-toc-grey {
+    border-color: var(--color-border-card);
+}
+
+#ez-toc-container.ez-toc-grey .ez-toc-title {
+    color: var(--color-text-primary);
+}
+
+#ez-toc-container.ez-toc-grey a.ez-toc-link {
+    color: var(--color-link);
+}
+
+#ez-toc-container.ez-toc-grey .ez-toc-list a {
+    color: var(--color-link);
+}
+
+#ez-toc-container.ez-toc-grey .ez-toc-list a:hover,
+#ez-toc-container.ez-toc-grey .ez-toc-list a:focus {
+    color: var(--color-link-hover);
+}
+
+#ez-toc-container.ez-toc-grey .ez-toc-title-toggle svg {
+    fill: var(--color-link);
+    color: var(--color-link);
+}
+
+/* Sidebar TOC widget */
+.site-sidebar #ez-toc-container {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.site-sidebar .ez-toc-title {
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+}
+
+.site-sidebar .ez-toc-list a {
+    padding: 0.25rem 0;
+}
+
+.site-sidebar .ez-toc-list-level-3 {
+    padding-left: 1rem;
+}
+
 /* ===== COMMENTS ===== */
 .comments-area {
     margin-top: 2rem;
@@ -750,6 +923,11 @@ body::after {
     main {
         padding: clamp(1rem, 2vw, 1.5rem);
     }
+
+    #ez-toc-container {
+        padding: 0.85rem 1rem;
+        font-size: 0.9rem;
+    }
 }
 
 /* ===== RESPONSIVE: SMALL TABLET ===== */
@@ -801,6 +979,19 @@ body::after {
 
     .post h2 {
         font-size: var(--font-size-post-title-xs);
+    }
+
+    #ez-toc-container {
+        padding: 0.7rem 0.85rem;
+        font-size: 0.85rem;
+    }
+
+    .ez-toc-list a {
+        padding: 0.25rem 0;
+    }
+
+    .ez-toc-list .ez-toc-list-level-3 {
+        padding-left: 1rem;
     }
 
     .widget {
